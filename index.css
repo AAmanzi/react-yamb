@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #f1f3f6;
+}
+
+.die {
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.die:not(.selected):hover {
+  background-color: #00baba22;
+}
+
+.die:nth-child(3n + 1) {
+  margin-left: 0;
+}
+
+.die:nth-child(3n) {
+  margin-right: 0;
+}
+
+.die.selected {
+  background-color: #00baba;
+}
+
+.dieValue {
+  font-size: 64px;
+}
+
+.diceWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 240px;
+  margin: auto;
+  justify-content: center;
+}
+
+.game {
+  margin: 20px auto;
+  width: 50vw;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0px 5px 12px -5px #e1e3e6, 0px 1px 1px 0px #e1e3e6,
+    0px 10px 24px -10px #e1e3e6;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: #00baba;
+  cursor: pointer;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  margin: 0 5px;
+  font-size: 24px;
+}
+
+.button[disabled] {
+  background-color: #f1f3f6;
+  cursor: not-allowed;
+}
+
+.button:not([disabled]):hover {
+  background-color: #00babacc;
+}
+
+.scoreboard {
+  margin: auto;
+  width: 90%;
+  border-collapse: collapse;
+}
+
+.scoreboard th {
+  text-align: left;
+  padding: 5px 10px;
+  font-size: 22px;
+}
+
+.scoreboard td {
+  border: 1px solid black;
+  padding: 5px 10px;
+  font-size: 22px;
+}
+
+.scoreboard td:not(:first-child, [disabled]) {
+  cursor: pointer;
+}
+
+.scoreboard td:not(:first-child, [disabled], .selected):hover {
+  background-color: #00baba22;
+}
+
+.scoreboard td.selected {
+  background-color: #00baba;
+}
